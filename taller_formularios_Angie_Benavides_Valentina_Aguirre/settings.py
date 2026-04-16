@@ -56,7 +56,7 @@ ROOT_URLCONF = 'taller_formularios_Angie_Benavides_Valentina_Aguirre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
