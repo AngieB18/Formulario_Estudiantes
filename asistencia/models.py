@@ -2,11 +2,11 @@ from django.db import models
 
 class Asistencia(models.Model):
     nombre_completo = models.CharField(max_length=150)
-    documento = models.CharField(max_length=50)
-    correo = models.EmailField()
-    fecha = models.DateField()
-    hora_ingreso = models.TimeField()
-    hora_salida = models.TimeField()
+    documento_de_identidad = models.CharField(max_length=50)
+    correo_electronico = models.EmailField()
+    fecha_de_asistencia = models.DateField()
+    hora_de_ingreso = models.TimeField()
+    hora_de_salida = models.TimeField()
     presente = models.BooleanField()
     observaciones = models.TextField(blank=True, null=True)
 
