@@ -1,19 +1,22 @@
 from django.db import models
 
-TIPOS = [
-    ('academica', 'Académica'),
-    ('administrativa', 'Administrativa'),
-    ('tecnica', 'Técnica'),
-    ('otra', 'Otra'),
-]
-
 class Solicitud(models.Model):
-    nombre_solicitante = models.CharField(max_length=150)
-    documento_identidad = models.CharField(max_length=50)
-    correo_electronico = models.EmailField()
-    telefono_contacto = models.IntegerField()
-    tipo_solicitud = models.CharField(max_length=20, choices=TIPOS)
-    asunto = models.CharField(max_length=200)
-    descripcion_detallada = models.TextField()
-    fecha_solicitud = models.DateField()
-    archivo_adjunto = models.FileField(upload_to='adjuntos/', blank=True, null=True)
+    TIPO_SOLICITUD = [
+        ('academica', 'Académica'),
+        ('administrativa', 'Administrativa'),
+        ('tecnica', 'Técnica'),
+        ('otra', 'Otra'),
+    ]
+
+    nombre = models.CharField("Nombre del solicitante", max_length=150)
+    documento = models.CharField("Documento de identidad", max_length=50)
+    correo = models.EmailField("Correo electrónico")
+    telefono = models.CharField("Teléfono de contacto", max_length=20)
+    tipo = models.CharField("Tipo de solicitud", max_length=20, choices=TIPO_SOLICITUD)
+    asunto = models.CharField("Asunto", max_length=200)
+    descripcion = models.TextField("Descripción detallada")
+    fecha = models.DateField("Fecha de la solicitud")
+    archivo = models.FileField("Archivo adjunto", upload_to='archivos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.nombre

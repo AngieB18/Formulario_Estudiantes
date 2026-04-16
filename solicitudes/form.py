@@ -5,3 +5,5 @@ class SolicitudForm(forms.ModelForm):
     class Meta:
         model = Solicitud
         fields = '__all__'
+
+        
