@@ -1,0 +1,15 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+ambiente/
+
+# Django stuff:
+db.sqlite3
+/media/
+
+# VSCode
+.vscode/
